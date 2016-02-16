@@ -2,10 +2,11 @@
 echo "Hello Steve!! This file is being executed by some build tool...."
 
 # Download and place binary in JBoss. WAR_FILE_URL variable is specified as an environment variable in the BuildConfig
-curl -o $JBOSS_HOME/standalone/deployments/ticket-monster.war -O ${WAR_FILE_URL}
+#curl -o $JBOSS_HOME/standalone/deployments/ticket-monster.war -O ${WAR_FILE_URL}
+wget ${WAR_FILE_URL}
+mv ticket-monster.war $JBOSS_HOME/standalone/deployments/ticket-monster.war
 
-
-echo "CURL has completed......"
+echo "WGET has completed......"
 
 # Call default assemble script
 #/usr/local/sti/assemble
